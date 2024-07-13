@@ -1,11 +1,11 @@
 import csv
 import requests
-from selenium import webbrowser
+from selenium import webdriver
 from bs4 import BeautifulSoup
 from time import sleep
 
 #open browser
-navegador = webbrowser.open('https://finance.yahoo.com/screener/new')
+navegador = webdriver.Chrome('https://finance.yahoo.com/screener/new')
 sleep(5)
 
 #select region
@@ -33,7 +33,6 @@ with open('caseCrawler.csv', 'w') as file:
     save = csv.save(file)
     for item in csv:
         save.writerow([item])
-
 
 
 
